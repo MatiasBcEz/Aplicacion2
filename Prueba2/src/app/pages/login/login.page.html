@@ -1,19 +1,20 @@
 <ion-content>
+
   <body>
-    <div id="container">
-      <form action="">
-        <div>
-          <ion-label>Nombre de Usuario</ion-label>
-          <ion-input type="text" palceholder="Ingrese su nombre de usuario..."></ion-input>
-        </div>
-        <div>
-          <ion-label>Contraseña</ion-label>
-          <ion-input type="password" palceholder="Ingrese su contraseña..."></ion-input>
-        </div>
-        <div>
-          <ion-button routerLink="/home">Iniciar Sesión</ion-button>
-        </div>
-      </form>
-    </div>
+    <form action="" class="form">
+      <h1>BIENVENIDOS A ALLGAMES</h1>
+      <div>
+        <ion-label>Nombre de Usuario</ion-label>
+        <ion-input type="text" name="text" class="box" placeholder="Ingrese su usuario"></ion-input>
+      </div>
+      <div>
+        <ion-label>Contraseña</ion-label>
+        <ion-input type="password" name="Password" class="box" placeholder="Ingrese su contraseña"></ion-input>
+      </div>
+      <div>
+        <ion-input  type="submit button" value="Iniciar Sesion" routerLink="/home" ></ion-input>
+      
+      </div>
+    </form>
   </body>
 </ion-content>
