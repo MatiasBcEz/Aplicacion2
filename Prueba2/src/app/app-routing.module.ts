@@ -17,6 +17,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'mis-juegos',
+    redirectTo: 'mis-juegos',
+    pathMatch: 'full'
+  },
+  {
+    path: 'agregar-juego',
+    redirectTo: 'agregar-juego',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     redirectTo: 'e404',
     pathMatch: 'full'
@@ -29,6 +39,16 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'agregar-juego',
+    loadChildren: () => import('./pages/agregar-juego/agregar-juego.module').then( m => m.AgregarJuegoPageModule)
+  },
+  {
+    path: 'mis-juegos',
+    loadChildren: () => import('./pages/mis-juegos/mis-juegos.module').then( m => m.MisJuegosPageModule)
+  },
+
+
 
 
 ];
