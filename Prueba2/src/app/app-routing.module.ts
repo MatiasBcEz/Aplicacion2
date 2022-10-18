@@ -46,7 +46,11 @@ const routes: Routes = [
   {
     path: 'mis-juegos',
     loadChildren: () => import('./pages/mis-juegos/mis-juegos.module').then( m => m.MisJuegosPageModule)
+  },  {
+    path: 'mis-animes',
+    loadChildren: () => import('./pages/mis-animes/mis-animes.module').then( m => m.MisAnimesPageModule)
   },
+
 
 
 
