@@ -1,24 +1,25 @@
 <ion-content [fullscreen]="true">
 <body>
   <div id="container">
-    <div col-md-12>
-      <ion-button color="tertiary" expand="block">Mi Perfil</ion-button>
-    </div>
-    <div col-md-12>
-      <ion-button color="tertiary" expand="block" routerLink="/mis-juegos">Mis Juegos</ion-button>
-    </div>
-    <div col-md-12>
-      <ion-button color="tertiary" expand="block">Mis Animes</ion-button>
-    </div>
-    <div col-md-12>
-      <ion-button color="tertiary" expand="block">Mis Pedidos</ion-button>
-    </div>
-    <div col-md-12>
-      <ion-button color="tertiary" expand="block">Datos de Facturacion</ion-button>
-    </div>
-    <div col-md-12>
-      <ion-button color="danger" expand="block" routerLink="/login">Cerrar sesión</ion-button>
+    <div class="login-box">
+
+      <div class="textbox">
+        <input class="btn" type="button" name="" value="Mi Perfil">
+      </div>
+      <div class="textbox">
+        <input class="btn" type="button" name="" value="Mis Animes" routerLink="/mis-animes">
+      </div>
+      <div class="textbox">
+        <input class="btn" type="button" name="" value="Mis Pedidos">
+      </div>
+      <div class="textbox">
+        <input class="btn" type="button" name="" value="Datos de Facturacion">
+      </div>
+      <div class="textbox">
+        <input class="btn" type="button" name="" value="Cerrar sesión" routerLink="/login">
+      </div>
     </div>
   </div>
+
 </body> 
 </ion-content>

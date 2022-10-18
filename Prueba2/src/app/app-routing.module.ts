@@ -27,6 +27,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'mis-animes',
+    redirectTo: 'mis-animes',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     redirectTo: 'e404',
     pathMatch: 'full'
@@ -46,7 +51,8 @@ const routes: Routes = [
   {
     path: 'mis-juegos',
     loadChildren: () => import('./pages/mis-juegos/mis-juegos.module').then( m => m.MisJuegosPageModule)
-  },  {
+  },
+  {
     path: 'mis-animes',
     loadChildren: () => import('./pages/mis-animes/mis-animes.module').then( m => m.MisAnimesPageModule)
   },
