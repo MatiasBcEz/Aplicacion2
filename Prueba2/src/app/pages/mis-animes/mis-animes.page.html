@@ -3,7 +3,43 @@
     <ion-button fill="clear" routerLink="/home">Volver</ion-button>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  <ion-item *ngFor="let anime of animes">
+    <ion-card>
+      <img src="{{anime.image}}" alt="">
+      <ion-card-header>
+        <ion-card-title>{{anime.name}}</ion-card-title>
+      </ion-card-header>
 
+      <ion-card-content>
+        {{anime.status}}
+        <hr>
+        {{anime.species}}
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
 </ion-content>
+<!-- <ion-content >
+  <ion-item *ngFor="let anime of animes" >
+    <ion-card >
+      <ion-card-header>
+        <ion-avatar slot="start">
+          <img src="{{anime.image}}" alt="">
+        </ion-avatar>
+      </ion-card-header>
+      <ion-card-content>
+
+        <ion-label>
+          {{anime.name}}
+        </ion-label>
+        <ion-label>
+          {{anime.status}}
+        </ion-label>
+        <ion-label>
+          {{anime.species}}
+        </ion-label>
+      </ion-card-content>
+
+    </ion-card>
+  </ion-item>
+</ion-content> -->
