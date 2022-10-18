@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiServiceService } from "../Servicios/api-service.service";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    public s: ApiServiceService
+  ) {
+    this.s.verInfo().subscribe((data)=>{
+      console.log(data);
+      
+    })
+  }
 
 }
