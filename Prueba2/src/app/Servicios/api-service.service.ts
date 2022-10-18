@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
 
-  api = 'https://kitsu.io/api/edge';
 
-  constructor(public asd: HttpClient
-    ) { 
+  constructor(public http: HttpClient) { 
 
   }
 
 
   verInfo(){
-    return this.asd.get('$(this.api)/posts/$(id)')
+    return this.http.get('https://kitsu.io/api/edge')
 
   }
 

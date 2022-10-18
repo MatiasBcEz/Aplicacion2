@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisAnimesPage implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient) { 
+
+  }
 
   ngOnInit() {
+    this.http.get('https://animechan.vercel.app/api/random')
+    .subscribe(res => {
+      console.log(res);
+      
+    })
   }
 
 }
