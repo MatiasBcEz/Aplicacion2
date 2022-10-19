@@ -10,7 +10,7 @@
 
 #container {
   background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(50px) ;
+  backdrop-filter: blur(1px) ;
   border-radius: 10px;
   width: 310px;
   position: absolute;
@@ -44,7 +44,7 @@
 }
 .underlay-photo {
   animation: hue-rotate 6s infinite;
-  background: url('https://w0.peakpx.com/wallpaper/941/541/HD-wallpaper-oneplus-gamer-2-amoled-border-dark-light-notch-one-plus-ps4-samsung.jpg');
+  background: url('https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2017/08/temporal_8.jpg?itok=lr5EuLDC');
   background-size: cover;
   background-position: center;
   -webkit-filter: grayscale(0%);
