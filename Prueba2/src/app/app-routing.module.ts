@@ -17,13 +17,13 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'mis-animes',
-    redirectTo: 'mis-animes',
+    path: 'mis-juegos',
+    redirectTo: 'mis-juegos',
     pathMatch: 'full'
   },
   {
-    path: 'agregar-animes',
-    redirectTo: 'agregar-animes',
+    path: 'juegos',
+    redirectTo: 'juegos',
     pathMatch: 'full'
   },
   {
@@ -40,9 +40,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'mis-animes',
-    loadChildren: () => import('./pages/mis-animes/mis-animes.module').then( m => m.MisAnimesPageModule)
+    path: 'juegos',
+    loadChildren: () => import('./pages/juegos/juegos.module').then( m => m.JuegosPageModule)
   },
+  {
+    path: 'mis-juegos',
+    loadChildren: () => import('./pages/mis-juegos/mis-juegos.module').then( m => m.MisJuegosPageModule)
+  },
+
+
 
 ];
 

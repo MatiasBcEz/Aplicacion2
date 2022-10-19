@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MisAnimesPageRoutingModule } from './mis-animes-routing.module';
+import { JuegosPageRoutingModule } from './juegos-routing.module';
 
-import { MisAnimesPage } from './mis-animes.page';
+import { JuegosPage } from './juegos.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MisAnimesPageRoutingModule
+    JuegosPageRoutingModule
   ],
-  declarations: [MisAnimesPage]
+  declarations: [JuegosPage]
 })
-export class MisAnimesPageModule {}
+export class JuegosPageModule {}

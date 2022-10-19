@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-mis-animes',
-  templateUrl: './mis-animes.page.html',
-  styleUrls: ['./mis-animes.page.scss'],
+  selector: 'app-juegos',
+  templateUrl: './juegos.page.html',
+  styleUrls: ['./juegos.page.scss'],
 })
-export class MisAnimesPage implements OnInit {
+export class JuegosPage implements OnInit {
 
   animes = []
   constructor(private http:HttpClient) { 
@@ -24,5 +24,3 @@ export class MisAnimesPage implements OnInit {
   
 
 }
-
-// https://animechan.vercel.app/api/random
