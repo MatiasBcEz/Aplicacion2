@@ -14,7 +14,7 @@ export class MisAnimesPage implements OnInit {
   }
 
   ngOnInit() {
-    this.http.get<any>('https://rickandmortyapi.com/api/character')
+    this.http.get<any>('https://api.rawg.io/api/games?key=36214cc580e7493fa9f5b2d0792347c3')
     .subscribe(res => {
       console.log(res);
       this.animes = res.results;

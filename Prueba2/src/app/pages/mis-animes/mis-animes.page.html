@@ -6,15 +6,19 @@
 <ion-content>
   <ion-item *ngFor="let anime of animes">
     <ion-card>
-      <img src="{{anime.image}}" alt="">
+      <img src="{{anime.background_image}}" alt="">
       <ion-card-header>
         <ion-card-title>{{anime.name}}</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
-        {{anime.status}}
+        {{anime.released}}
         <hr>
-        {{anime.species}}
+        {{anime.esrb_rating.name}}
+        <hr>
+        {{anime.rating_top}}
+        <hr>
+        {{anime.genres.name}}
       </ion-card-content>
     </ion-card>
   </ion-item>
