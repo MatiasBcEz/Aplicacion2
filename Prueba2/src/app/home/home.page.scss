@@ -1,15 +1,15 @@
-body{
-  background: url(https://w0.peakpx.com/wallpaper/941/541/HD-wallpaper-oneplus-gamer-2-amoled-border-dark-light-notch-one-plus-ps4-samsung.jpg) no-repeat;;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-size: cover;
-  background-position: center;
-
-}
+// body{
+//   background: url(https://w0.peakpx.com/wallpaper/941/541/HD-wallpaper-oneplus-gamer-2-amoled-border-dark-light-notch-one-plus-ps4-samsung.jpg) no-repeat;;
+//   margin: 0;
+//   padding: 0;
+//   font-family: sans-serif;
+//   background-size: cover;
+//   background-position: center;
+// fondo normal
+// }
 
 #container {
-  background-color: rgba(70, 38, 38, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(50px) ;
   border-radius: 10px;
   width: 310px;
@@ -22,7 +22,7 @@ body{
 
 .btn{
   width: 100%;
-  background-color: rgba(65, 37, 37, 0.7);
+  background-color: rgba(0, 0, 0, 1);
   border: 2px solid;
   color: white;
   padding: 5px;
@@ -31,6 +31,48 @@ body{
   margin: 12px 0;
   border-radius: 25px;
 }
+
+//**********************************************************************************************
+//Rgb del fondo
+
+[class*=underlay] {
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+.underlay-photo {
+  animation: hue-rotate 6s infinite;
+  background: url('https://w0.peakpx.com/wallpaper/941/541/HD-wallpaper-oneplus-gamer-2-amoled-border-dark-light-notch-one-plus-ps4-samsung.jpg');
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: grayscale(0%);
+  z-index: -1;
+}
+.underlay-black {
+  background: rgba(0,0,0,0.1);
+  z-index: -1;
+}
+
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: grayscale(30%) hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: grayscale(30%) hue-rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
