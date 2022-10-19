@@ -4,23 +4,23 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-item *ngFor="let anime of animes">
+  <ion-item *ngFor="let juego of juegos">
     <ion-card>
-      <img src="{{anime.background_image}}" alt="">
+      <img src="{{juego.background_image}}" alt="">
       <ion-card-header>
-        <ion-card-title>{{anime.name}}</ion-card-title>
+        <ion-card-title>{{juego.name}}</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
-        {{anime.released}}
+        {{juego.released}}
         <hr>
-        {{anime.esrb_rating.name}}
+        {{juego.esrb_rating.name}}
         <hr>
-        {{anime.rating_top}}
+        {{juego.rating_top}}
         <hr>
-        {{anime.genres.name}}
+        {{juego.genres.name}}
 
-        <input class="btn" type="button" value="Añadir a Mis Juegos">
+        <button (click)="onClick(juego)">Ver</button>
 
       </ion-card-content>
     </ion-card>
