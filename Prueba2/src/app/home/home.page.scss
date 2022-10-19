@@ -1,13 +1,16 @@
-body{
-  background: url(https://i.pinimg.com/originals/fa/6a/8f/fa6a8fe2b19e575d6b2aa533d47fa910.jpg) no-repeat;;
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-size: cover;
-}
+// body{
+//   background: url(https://w0.peakpx.com/wallpaper/941/541/HD-wallpaper-oneplus-gamer-2-amoled-border-dark-light-notch-one-plus-ps4-samsung.jpg) no-repeat;;
+//   margin: 0;
+//   padding: 0;
+//   font-family: sans-serif;
+//   background-size: cover;
+//   background-position: center;
+// fondo normal
+// }
 
 #container {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(1px) ;
   border-radius: 10px;
   width: 310px;
   position: absolute;
@@ -28,6 +31,48 @@ body{
   margin: 12px 0;
   border-radius: 25px;
 }
+
+//**********************************************************************************************
+//Rgb del fondo
+
+[class*=underlay] {
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+}
+.underlay-photo {
+  animation: hue-rotate 6s infinite;
+  background: url('https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2017/08/temporal_8.jpg?itok=lr5EuLDC');
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: grayscale(0%);
+  z-index: -1;
+}
+.underlay-black {
+  background: rgba(0,0,0,0.1);
+  z-index: -1;
+}
+
+@keyframes hue-rotate {
+  from {
+    -webkit-filter: grayscale(30%) hue-rotate(0deg);
+  }
+  to {
+    -webkit-filter: grayscale(30%) hue-rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
