@@ -5,5 +5,15 @@
 </ion-header>
 
 <ion-content>
+  <ion-item *ngFor="let juego of juegos">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{juego.nombre}}</ion-card-title>
+      </ion-card-header>
 
+      <ion-card-content>
+
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
 </ion-content>

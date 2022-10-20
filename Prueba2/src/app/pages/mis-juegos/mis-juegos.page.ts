@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FireStoreService } from 'src/app/Servicios/fire-store.service';
 
 @Component({
   selector: 'app-mis-juegos',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisJuegosPage implements OnInit {
 
-  constructor() { }
+  juegos: any;
+
+  constructor(
+    public dbMisJuegos: FireStoreService
+  ) {}
 
   ngOnInit() {
+    this.dbMisJuegos.getMisJuegos().subscribe((data) => {
+      this.juegos = data;
+    })
   }
 
 }
