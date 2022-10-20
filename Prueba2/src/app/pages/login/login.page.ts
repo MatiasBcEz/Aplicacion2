@@ -31,11 +31,21 @@ export class LoginPage implements OnInit {
     let userName = this.formLogin.value.userName;
     let password = this.formLogin.value.password;
 
+    var expresion= /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+
     this.dbUsuarios.getUsuario().subscribe((data: any) => {
       data.forEach(usuario => {
         if (userName == usuario.userName && password == usuario.password){
           this.ss.agregarDatos('id', usuario.id)
           this.router.navigate(['home'])
+        }
+        else if ( userName ==="" || password===""  ) { 
+          document.getElementById("demo").innerHTML = "Todos los campos son obligatorios.";
+          return false
+        }
+        else if (!expresion.test(password.value)){ 
+          document.getElementById("demo").innerHTML = "Usuario o contraseña incorrectos. Reintentelo.";
+          return false
         }
       })
     })
