@@ -7,12 +7,12 @@ export const environment = {
 };
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyAcK_WNbLTtp7kkHHy1x8twdfGlWliDc3I",
-  authDomain: "trip-zone.firebaseapp.com",
-  projectId: "trip-zone",
-  storageBucket: "trip-zone.appspot.com",
-  messagingSenderId: "127912173520",
-  appId: "1:127912173520:web:584c2c5f1fe66e0fb3a3d5"
+  apiKey: "AIzaSyDFD9AN6f2ir3xcJApxe019oejQrIa7J18",
+  authDomain: "trabajo-d77a9.firebaseapp.com",
+  projectId: "trabajo-d77a9",
+  storageBucket: "trabajo-d77a9.appspot.com",
+  messagingSenderId: "83942284049",
+  appId: "1:83942284049:web:26b561f4924e36555acab0"
 };
 
 /*

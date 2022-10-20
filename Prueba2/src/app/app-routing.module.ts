@@ -75,10 +75,16 @@ const routes: Routes = [
     loadChildren: () => import('./pages/editar-usuario/editar-usuario.module').then( m => m.EditarUsuarioPageModule)
   },
   {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+
+  {
     path: '**',
     redirectTo: 'e404',
     pathMatch: 'full'
   },
+ 
 
 ];
 

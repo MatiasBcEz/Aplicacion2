@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FireStoreService } from 'src/app/Servicios/fire-store.service';
+import { StorageService } from 'src/app/Servicios/storage.service';
 
 @Component({
   selector: 'app-mis-juegos',
@@ -8,20 +9,38 @@ import { FireStoreService } from 'src/app/Servicios/fire-store.service';
 })
 export class MisJuegosPage implements OnInit {
 
-  juegos: any;
+  juegos: any[]=[];
+  idUsuario: any;
 
   constructor(
-    public dbMisJuegos: FireStoreService
+    public dbMisJuegos: FireStoreService,
+    public obtId: StorageService
   ) {}
 
-  ngOnInit() {
-    this.dbMisJuegos.getMisJuegos().subscribe((data) => {
-      this.juegos = data;
+  async ngOnInit() {
+    await this.obtId.getDatos('id').then((data)=>{
+      this.idUsuario=data;
     })
+
+    this.dbMisJuegos.getMisJuegos().subscribe((data: any) => {
+      data.forEach(juegos=>{
+        if (juegos.idUsuario==this.idUsuario){
+          this.juegos.push(juegos);
+        }
+        
+
+      })
+      
+    });
   }
 
   eliminarMisJuegos(id: string){
+    this.juegos=[]
+    
     this.dbMisJuegos.eliminarMisJuegos(id)
   }
+
+
+
 
 }
