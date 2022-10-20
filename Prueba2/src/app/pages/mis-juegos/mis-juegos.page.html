@@ -3,22 +3,27 @@
     <ion-button fill="clear" routerLink="/home" style="position:absolute; z-index:1;">
       <ion-icon style="color: white;" name="arrow-back-outline"></ion-icon>
     </ion-button>
-    <ion-title class="title">Default Title</ion-title>
+    <ion-title class="title">Mis Juegos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content>
-  <ion-item *ngFor="let juego of juegos">
-    <ion-card>
-      <ion-card-header>
-        <img src="{{juego.img}}" alt="">
-        <ion-card-title>{{juego.nombre}}</ion-card-title>
-      </ion-card-header>
+<ion-content class="bg-image">
 
-      <ion-card-content>
-        <button class="btn" (click)="eliminarMisJuegos(juego.id)">AntiPeruano</button>
-      </ion-card-content>
-    </ion-card>
-  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let juego of juegos">
+        <ion-card class="card">
+          <ion-card-header>
+            <img src="{{juego.img}}" alt="">
+            <ion-card-title>{{juego.nombre}}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <button class="btn" (click)="eliminarMisJuegos(juego.id)">Eliminar mis Juegos</button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
