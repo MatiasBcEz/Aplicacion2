@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { FireStoreService } from 'src/app/Servicios/fire-store.service';
+import { JuegosPageRoutingModule } from './juegos-routing.module';
 
 @Component({
   selector: 'app-juegos',
@@ -12,6 +14,7 @@ export class JuegosPage implements OnInit {
   juegos = []
     constructor(
       public navCtrl: NavController,
+      public dbMisJuegos: FireStoreService,
       private http:HttpClient) { 
 
   }
@@ -21,14 +24,14 @@ export class JuegosPage implements OnInit {
     .subscribe(res => {
       console.log(res);
       this.juegos = res.results;
-      
     })
   }
   
-  //onClick(juego) {
-  //  this.navCtrl.push(DetallePage, {
-  //    id: juego.id
-  //  })
-  //}
-
+  agregarMisJuegos(juego) {
+    let informacion = {
+      'id': juego.id,
+      'nombre': juego.name
+    }
+    this.dbMisJuegos.agregarMisJuegos(informacion)
+  }
 }

@@ -10,4 +10,14 @@ export class FireStoreService {
     public db: AngularFirestore
   ) { }
 
+  agregarMisJuegos(data: any) {
+    const collection = this.db.collection("mis-juegos");
+    return collection.doc().set(data);
+  }
+
+  getMisJuegos(){
+    const collection  = this.db.collection("mis-juegos");
+    return collection.valueChanges({ idField: 'id '})
+  }
+
 }
