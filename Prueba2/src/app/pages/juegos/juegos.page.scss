@@ -1,34 +1,16 @@
-body{
-    background: url(https://i.pinimg.com/originals/fa/6a/8f/fa6a8fe2b19e575d6b2aa533d47fa910.jpg) no-repeat;;
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-size: cover;
-  }
-  
-  #container {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    width: 310px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: white;
-  }
-  
-  .btn{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 1);
-    border: 2px solid;
-    color: white;
-    padding: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    margin: 12px 0;
-    border-radius: 25px;
-  }
-  
-  
-  
-  
+.btn {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  border: 2px solid;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+  margin: 12px 0;
+  border-radius: 25px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  color: white;
+}
