@@ -1,25 +1,9 @@
 <ion-content>
 
   <body>
-    <!-- <form action="" class="form">
-      <h1>BIENVENIDOS A ALLGAMES</h1>
-      <div>
-        <ion-label>Nombre de Usuario</ion-label>
-        <ion-input type="text" name="text" class="box" placeholder="Ingrese su usuario"></ion-input>
-      </div>
-      <div>
-        <ion-label>Contraseña</ion-label>
-        <ion-input type="password" name="Password" class="box" placeholder="Ingrese su contraseña"></ion-input>
-      </div>
-      <div>
-        <ion-input  type="submit button" value="Iniciar Sesion" routerLink="/home" ></ion-input>
-      
-      </div>
-    </form> -->
-
     <div class="login-box">
       <h1>Bienvenidos al Trip Zone</h1>
-      <form (submit)="validarLogin()" [formGroup] = "formLogin">
+      <form (submit)="validarLogin()" [formGroup]="formLogin">
         <div class="textbox">
           <i class="fa fa-user" aria-hidden="true"></i>
           <input type="text" placeholder="Usuario" formControlName="userName">
@@ -33,6 +17,6 @@
       </form>
     </div>
     <div class="underlay-photo"></div>
-    <div class="underlay-black"></div> 
+    <div class="underlay-black"></div>
   </body>
 </ion-content>
