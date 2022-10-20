@@ -35,6 +35,11 @@ export class FireStoreService {
     return collection.valueChanges({ idField: 'id'})
   }
 
+  getUnUsuario(id){
+    const collection  = this.db.collection("usuario");
+    return collection.doc(id).valueChanges({ idField: 'id'})
+  }
+
   editarUsuario(id, data){
     const collection  = this.db.collection("usuario");
     return collection.doc(id).update(data)
