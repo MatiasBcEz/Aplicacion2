@@ -32,10 +32,16 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '**',
-    redirectTo: 'e404',
+    path: 'usuarios',
+    redirectTo: 'usuarios',
     pathMatch: 'full'
   },
+  {
+    path: 'agregar-usuario',
+    redirectTo: 'agregar-usuario',
+    pathMatch: 'full'
+  },
+  
   {
     path: 'e404',
     loadChildren: () => import('./pages/e404/e404.module').then( m => m.E404PageModule)
@@ -55,7 +61,8 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
-  },  {
+  },
+  {
     path: 'agregar-usuario',
     loadChildren: () => import('./pages/agregar-usuario/agregar-usuario.module').then( m => m.AgregarUsuarioPageModule)
   },
@@ -63,6 +70,11 @@ const routes: Routes = [
     path: 'usuarios',
     loadChildren: () => import('./pages/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
   },
+  {
+    path: 'editar-usuario/:id',
+    loadChildren: () => import('./pages/editar-usuario/editar-usuario.module').then( m => m.EditarUsuarioPageModule)
+  },
+
 
 
 

@@ -1,23 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { FireStoreService } from 'src/app/Servicios/fire-store.service';
 
 @Component({
-  selector: 'app-agregar-usuario',
-  templateUrl: './agregar-usuario.page.html',
-  styleUrls: ['./agregar-usuario.page.scss'],
+  selector: 'app-editar-usuario',
+  templateUrl: './editar-usuario.page.html',
+  styleUrls: ['./editar-usuario.page.scss'],
 })
-export class AgregarUsuarioPage implements OnInit {
+export class EditarUsuarioPage implements OnInit {
+  
+  formEditarUsuario : FormGroup;
 
-  formNuevoUsuario : FormGroup;
+  idUsuario: string;
 
   constructor(
     private fb: FormBuilder,
-    public dbUsuarios: FireStoreService
+    public dbUsuarios: FireStoreService,
+    public activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.formNuevoUsuario = this.fb.group({
+    this.idUsuario = this.activatedRoute.snapshot.paramMap.get('id');
+    this.formEditarUsuario = this.fb.group({
       name: ['',[Validators.required, Validators.minLength(3)]],
       userName: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(3)]],
@@ -29,9 +34,9 @@ export class AgregarUsuarioPage implements OnInit {
     })
   }
 
-  crearUsuario(){
-    console.log(this.formNuevoUsuario.value);
-    this.dbUsuarios.agregarUsuario(this.formNuevoUsuario.value)
+  editarUsuario(){
+    console.log(this.formEditarUsuario.value);
+    this.dbUsuarios.editarUsuario(this.idUsuario, this.formEditarUsuario.value)
   }
 
 }

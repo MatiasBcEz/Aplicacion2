@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 import { IonicModule } from '@ionic/angular';
 
-import { AgregarUsuarioPageRoutingModule } from './agregar-usuario-routing.module';
+import { EditarUsuarioPageRoutingModule } from './editar-usuario-routing.module';
 
-import { AgregarUsuarioPage } from './agregar-usuario.page';
+import { EditarUsuarioPage } from './editar-usuario.page';
 
 @NgModule({
   imports: [
@@ -14,8 +15,8 @@ import { AgregarUsuarioPage } from './agregar-usuario.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    AgregarUsuarioPageRoutingModule
+    EditarUsuarioPageRoutingModule
   ],
-  declarations: [AgregarUsuarioPage]
+  declarations: [EditarUsuarioPage]
 })
-export class AgregarUsuarioPageModule {}
+export class EditarUsuarioPageModule {}

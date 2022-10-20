@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FireStoreService } from 'src/app/Servicios/fire-store.service';
+
 
 @Component({
   selector: 'app-usuarios',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosPage implements OnInit {
 
-  constructor() { }
+  usuarios: any;
+
+  constructor(
+    public dbMisJuegos: FireStoreService
+  ) { }
 
   ngOnInit() {
+    this.dbMisJuegos.getUsuario().subscribe((data) => {
+      this.usuarios = data;
+    })
   }
 
 }
