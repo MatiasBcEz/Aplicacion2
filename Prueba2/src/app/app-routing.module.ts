@@ -12,6 +12,11 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'admin',
+    redirectTo: 'admin',
+    pathMatch: 'full'
+  },
+  {
     path: 'login',
     redirectTo: 'login',
     pathMatch: 'full'
@@ -47,6 +52,15 @@ const routes: Routes = [
     path: 'mis-juegos',
     loadChildren: () => import('./pages/mis-juegos/mis-juegos.module').then( m => m.MisJuegosPageModule)
   },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then( m => m.AdminPageModule)
+  },  {
+    path: 'agregar-usuario',
+    loadChildren: () => import('./pages/agregar-usuario/agregar-usuario.module').then( m => m.AgregarUsuarioPageModule)
+  },
+
+
 
 
 

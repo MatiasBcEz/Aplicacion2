@@ -17,7 +17,12 @@ export class FireStoreService {
 
   getMisJuegos(){
     const collection  = this.db.collection("mis-juegos");
-    return collection.valueChanges({ idField: 'id '})
+    return collection.valueChanges({ idField: 'id'})
+  }
+
+  eliminarMisJuegos(id){
+    const collection  = this.db.collection("mis-juegos");
+    return collection.doc(id).delete()
   }
 
 }

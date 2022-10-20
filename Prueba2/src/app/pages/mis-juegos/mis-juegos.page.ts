@@ -20,4 +20,8 @@ export class MisJuegosPage implements OnInit {
     })
   }
 
+  eliminarMisJuegos(id: string){
+    this.dbMisJuegos.eliminarMisJuegos(id)
+  }
+
 }

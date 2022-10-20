@@ -30,7 +30,8 @@ export class JuegosPage implements OnInit {
   agregarMisJuegos(juego) {
     let informacion = {
       'id': juego.id,
-      'nombre': juego.name
+      'nombre': juego.name,
+      'img': juego.background_image,
     }
     this.dbMisJuegos.agregarMisJuegos(informacion)
   }
