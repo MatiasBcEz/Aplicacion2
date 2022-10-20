@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -74,11 +74,11 @@ const routes: Routes = [
     path: 'editar-usuario/:id',
     loadChildren: () => import('./pages/editar-usuario/editar-usuario.module').then( m => m.EditarUsuarioPageModule)
   },
-
-
-
-
-
+  {
+    path: '**',
+    redirectTo: 'e404',
+    pathMatch: 'full'
+  },
 
 ];
 

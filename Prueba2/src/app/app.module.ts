@@ -12,6 +12,7 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database'; 
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HttpClientModule } from "@angular/common/http";
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 
 
@@ -23,7 +24,8 @@ import { HttpClientModule } from "@angular/common/http";
       AngularFireModule.initializeApp(firebaseConfig),
       AngularFireDatabaseModule,
       AngularFireAuthModule,
-      HttpClientModule
+      HttpClientModule,
+      IonicStorageModule.forRoot()
     ],
 
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

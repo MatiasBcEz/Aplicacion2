@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StorageService } from '../Servicios/storage.service';
 
 
 @Component({
@@ -8,8 +9,13 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor(){
-
+  constructor(
+    public ss: StorageService
+  ){
+    this.ss.getDatos('id').then((data)=>{
+      console.log(data);
+      
+    })
   }
 
 }

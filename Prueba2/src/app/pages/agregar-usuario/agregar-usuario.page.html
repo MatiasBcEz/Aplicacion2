@@ -5,24 +5,24 @@
 </ion-header>
 
 <ion-content>
-<form (submit)="crearUsuario()" [formGroup] = "formNuevoUsuario">
-  <label for="">Nombre Completo</label>
-  <ion-input formControlName="name" placeholder=""></ion-input>
-  <label for="">Nombre de Usuario</label>
-  <ion-input formControlName="userName" placeholder=""></ion-input>
-  <label for="">Contraseña</label>
-  <ion-input formControlName="password" placeholder=""></ion-input>
-  <label for="">Edad</label>
-  <ion-input formControlName="edad" placeholder=""></ion-input>
-  <label for="">Correo electronico</label>
-  <ion-input formControlName="email" placeholder=""></ion-input>
-  <label for="">Región</label>
-  <ion-input formControlName="region" placeholder=""></ion-input>
-  <label for="">Comuna</label>
-  <ion-input formControlName="comuna" placeholder=""></ion-input>
-  <label for="">Dirección</label>
-  <ion-input formControlName="direccion" placeholder=""></ion-input>
+  <form (submit)="crearUsuario()" [formGroup] = "formNuevoUsuario">
+    <label for="">Nombre Completo</label>
+    <ion-input formControlName="name" placeholder="Nombre Apellido Apellido "></ion-input>
+    <label for="">Nombre de Usuario</label>
+    <ion-input formControlName="userName" placeholder="Nombre de Usuario"></ion-input>
+    <label for="">Contraseña</label>
+    <ion-input formControlName="password" placeholder="Contraseña"></ion-input>
+    <label for="">Edad</label>
+    <ion-input formControlName="edad" placeholder="18"></ion-input>
+    <label for="">Correo electronico</label>
+    <ion-input formControlName="email" placeholder="correo@ejemplo.cl"></ion-input>
+    <label for="">Región</label>
+    <ion-input formControlName="region" placeholder="Región"></ion-input>
+    <label for="">Comuna</label>
+    <ion-input formControlName="comuna" placeholder="Comuna"></ion-input>
+    <label for="">Dirección</label>
+    <ion-input formControlName="direccion" placeholder="Dirección"></ion-input>
 
-  <button type="submit" [disabled]="!formNuevoUsuario.valid">Enviar</button>
-</form>
+    <button type="submit" [disabled]="!formNuevoUsuario.valid">Enviar</button>
+  </form>
 </ion-content>
