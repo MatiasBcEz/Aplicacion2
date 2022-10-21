@@ -18,6 +18,7 @@
             <ion-card-title>{{usuario.email}}</ion-card-title>
           </ion-card-header>
           <button class="btn" [routerLink]="['/editar-usuario', usuario.id]">Editar Usuario</button>
+          <button class="btn" (click)="eliminarUsuario(usuario.id)">Eliminar Usuario</button>
         </ion-card>
       </ion-col>
     </ion-row>

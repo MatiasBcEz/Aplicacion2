@@ -12,7 +12,8 @@ export class UsuariosPage implements OnInit {
   usuarios: any;
 
   constructor(
-    public dbMisJuegos: FireStoreService
+    public dbMisJuegos: FireStoreService,
+    public dbUsuarios: FireStoreService
   ) { }
 
   ngOnInit() {
@@ -21,4 +22,9 @@ export class UsuariosPage implements OnInit {
     })
   }
 
+  eliminarUsuario(id: string){
+    this.usuarios=[]
+    
+    this.dbMisJuegos.eliminarUsuario(id)
+  }
 }
