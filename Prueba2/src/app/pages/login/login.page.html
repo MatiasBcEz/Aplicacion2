@@ -2,6 +2,7 @@
 
   <body>
     <div class="login-box">
+      <fieldset style="border-radius: 10px; color: white;">
       <h1>Bienvenidos al Trip Zone</h1>
       <form (submit)="validarLogin()" [formGroup]="formLogin">
         <div class="textbox">
@@ -15,6 +16,7 @@
         <span id="demo"></span>
         <button class="btn" type="submit">Iniciar Sesion</button>
       </form>
+    </fieldset>
     </div>
     <div class="underlay-photo"></div>
     <div class="underlay-black"></div>
