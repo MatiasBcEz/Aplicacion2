@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { FireStoreService } from 'src/app/Servicios/fire-store.service';
+import { StorageService } from 'src/app/Servicios/storage.service';
 
 @Component({
   selector: 'app-editar-usuario',
@@ -11,13 +12,14 @@ import { FireStoreService } from 'src/app/Servicios/fire-store.service';
 export class EditarUsuarioPage implements OnInit {
   
   formEditarUsuario : FormGroup;
-
+  usuarios: any[]=[];
   idUsuario: string;
 
   constructor(
     private fb: FormBuilder,
     public dbUsuarios: FireStoreService,
     public activatedRoute: ActivatedRoute,
+    public obtId: StorageService,
   ) { }
 
   ngOnInit() {
@@ -31,7 +33,14 @@ export class EditarUsuarioPage implements OnInit {
       region: ['', [Validators.required, Validators.minLength(3)]],
       comuna: ['', [Validators.required, Validators.minLength(3)]],
       direccion: ['', [Validators.required, Validators.minLength(3)]]
+    });
+
+    this.obtId.getDatos('id').then((data)=> {
+      this.dbUsuarios.getUnUsuario(data).subscribe((user) => {
+        this.usuarios = [user]
+      })
     })
+
   }
 
   editarUsuario(){
