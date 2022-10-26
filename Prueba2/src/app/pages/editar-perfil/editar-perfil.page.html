@@ -1,19 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-button fill="clear" routerLink="/usuarios" style="position:absolute; z-index:1; margin-top: -15px;">
+    <ion-button fill="clear" routerLink="/perfil" style="position:absolute; z-index:1; margin-top: -15px;">
       <ion-icon style="color: white;" name="arrow-back-outline"></ion-icon>
     </ion-button>
-    <ion-title class="title">Editar Usuario</ion-title>
+    <ion-title class="title">Editar Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="bg-image" *ngFor="let usuario of usuarios">
-  <form (submit)="editarUsuario()" [formGroup] = "formEditarUsuario" style="text-align: justify;">
+  <form (submit)="editarPerfilUsuario()" [formGroup] = "formEditarPerfilUsuario" style="text-align: justify;">
     <fieldset> 
       <legend style="font-size: 30px;"> Editar Usuario</legend>
       <p>
       <label for="name">Nombre Completo: </label>
-      <input type="text" formControlName="name" id="name" [(ngModel)]="usuario.name">
+      <input type="text" formControlName="name" id="name" [(ngModel)]="usuario.name" disabled="disabled" >
     </p>
     <p>
       <label for="userName">Nombre de Usuario: </label>
@@ -25,7 +25,7 @@
     </p>
     <p>
       <label for="edad">Edad: </label>
-      <input type="text" formControlName="edad" placeholder="18" id="edad" [(ngModel)]="usuario.edad">
+      <input type="text" formControlName="edad" placeholder="18" id="edad" [(ngModel)]="usuario.edad" disabled="disabled">
     </p>
     <p>
       <label for="email">Correo electronico: </label>
@@ -44,7 +44,7 @@
       <input type="text" formControlName="direccion" placeholder="Dirección" id="direccion" [(ngModel)]="usuario.direccion">
     </p>
   
-    <button class="btn" type="submit" [disabled]="!formEditarUsuario.valid" routerLink="/usuarios">Enviar</button>
+    <button class="btn" type="submit" [disabled]="!formEditarPerfilUsuario.valid" routerLink="/perfil">Enviar</button>
   </fieldset>
   </form>
 </ion-content>
