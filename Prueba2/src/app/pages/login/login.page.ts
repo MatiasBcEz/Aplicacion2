@@ -34,9 +34,9 @@ export class LoginPage implements OnInit {
     var expresion= /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
     this.dbUsuarios.getUsuario().subscribe((data: any) => {
-      data.forEach(usuario => {
+      data.forEach((usuario: any) => {
         if (userName == usuario.userName && password == usuario.password){
-          this.ss.agregarDatos('id', usuario.id)
+          localStorage.setItem("id", usuario.id)
           this.router.navigate(['home'])
         }
         else if ( userName ==="" || password===""  ) { 
@@ -50,5 +50,7 @@ export class LoginPage implements OnInit {
       })
     })
   }
-
+  ionViewDidEnter(){
+    localStorage.clear()
+  }
 }

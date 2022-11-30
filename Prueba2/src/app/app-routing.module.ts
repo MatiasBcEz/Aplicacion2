@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: '',
@@ -24,7 +26,7 @@ const routes: Routes = [
   {
     path: 'mis-juegos',
     redirectTo: 'mis-juegos',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'juegos',
@@ -52,11 +54,13 @@ const routes: Routes = [
   },
   {
     path: 'juegos',
-    loadChildren: () => import('./pages/juegos/juegos.module').then( m => m.JuegosPageModule)
+    loadChildren: () => import('./pages/juegos/juegos.module').then( m => m.JuegosPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'mis-juegos',
-    loadChildren: () => import('./pages/mis-juegos/mis-juegos.module').then( m => m.MisJuegosPageModule)
+    loadChildren: () => import('./pages/mis-juegos/mis-juegos.module').then( m => m.MisJuegosPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'admin',
@@ -64,23 +68,28 @@ const routes: Routes = [
   },
   {
     path: 'agregar-usuario',
-    loadChildren: () => import('./pages/agregar-usuario/agregar-usuario.module').then( m => m.AgregarUsuarioPageModule)
+    loadChildren: () => import('./pages/agregar-usuario/agregar-usuario.module').then( m => m.AgregarUsuarioPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'usuarios',
-    loadChildren: () => import('./pages/usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+    loadChildren: () => import('./pages/usuarios/usuarios.module').then( m => m.UsuariosPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'editar-usuario/:id',
-    loadChildren: () => import('./pages/editar-usuario/editar-usuario.module').then( m => m.EditarUsuarioPageModule)
+    loadChildren: () => import('./pages/editar-usuario/editar-usuario.module').then( m => m.EditarUsuarioPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'perfil',
-    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'editar-perfil/:id',
-    loadChildren: () => import('./pages/editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule)
+    loadChildren: () => import('./pages/editar-perfil/editar-perfil.module').then( m => m.EditarPerfilPageModule),
+    canActivate: [AuthGuard]
   },
 
   {

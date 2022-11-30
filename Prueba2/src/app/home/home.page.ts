@@ -9,13 +9,8 @@ import { StorageService } from '../Servicios/storage.service';
 })
 export class HomePage {
 
-  constructor(
-    public ss: StorageService
-  ){
-    this.ss.getDatos('id').then((data)=>{
-      console.log(data);
-      
-    })
+  constructor(){
+
   }
 
 }
