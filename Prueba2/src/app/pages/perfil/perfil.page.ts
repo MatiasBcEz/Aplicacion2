@@ -9,7 +9,7 @@ import { StorageService } from 'src/app/Servicios/storage.service';
 })
 export class PerfilPage implements OnInit {
 
-  usuarios: any[]=[];
+  usuarios: any;
   idUsuario: any;
 
   constructor(
@@ -18,14 +18,10 @@ export class PerfilPage implements OnInit {
   ) { }
 
   async ngOnInit() {
-    await this.obtId.getDatos('id').then((data)=>{
-      this.idUsuario=data;
-    })
+    this.idUsuario = localStorage.getItem('id')
 
-    this.obtId.getDatos('id').then((data)=> {
-      this.dbUsuarios.getUnUsuario(data).subscribe((user) => {
-        this.usuarios = [user]
-      })
+    this.dbUsuarios.getUnUsuario(this.idUsuario).subscribe((data) => {
+      this.usuarios = [data]
     })
   }
 
